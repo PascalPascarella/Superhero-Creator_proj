@@ -23,19 +23,22 @@ namespace Superhero_Creator2.Controllers
 		// GET: SuperheroesController
 		public ActionResult Index()
 		{
-			return View();
+			var superheroes = _db.Superheroes.ToList();		// Grabs all hero rec, assign to list and assign to var
+			return View(superheroes);
 		}
 
 		// GET: SuperheroesController/Details/5
 		public ActionResult Details(int id)
 		{
-			return View();
+			var superheroDetails = _db.Superheroes.Find(id);
+			return View(superheroDetails);
 		}
 
 		// GET: SuperheroesController/Create
 		public ActionResult Create()
 		{
-			return View();
+			Superhero superhero = new Superhero();
+			return View(superhero);
 		}
 
 		// POST: SuperheroesController/Create
@@ -58,7 +61,9 @@ namespace Superhero_Creator2.Controllers
 		// GET: SuperheroesController/Edit/5
 		public ActionResult Edit(int id)
 		{
-			return View();
+			var superheroEdit = _db.Superheroes.Find(id);
+
+			return View(superheroEdit);
 		}
 
 		// POST: SuperheroesController/Edit/5
@@ -68,6 +73,8 @@ namespace Superhero_Creator2.Controllers
 		{
 			try
 			{
+				_db.Superheroes.Update(superhero);
+				_db.SaveChanges();
 				return RedirectToAction(nameof(Index));
 			}
 			catch
@@ -79,7 +86,9 @@ namespace Superhero_Creator2.Controllers
 		// GET: SuperheroesController/Delete/5
 		public ActionResult Delete(int id)
 		{
-			return View();
+			var superheroDelete = _db.Superheroes.Find(id);
+
+			return View(superheroDelete);
 		}
 
 		// POST: SuperheroesController/Delete/5
@@ -89,6 +98,9 @@ namespace Superhero_Creator2.Controllers
 		{
 			try
 			{
+				_db.Superheroes.Remove(superhero);
+				_db.SaveChanges();
+
 				return RedirectToAction(nameof(Index));
 			}
 			catch
