@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Superhero_Creator2.Models;
 
 namespace Superhero_Creator2.Controllers
 {
@@ -30,7 +31,7 @@ namespace Superhero_Creator2.Controllers
 		// POST: SuperheroesController/Create
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Create(IFormCollection collection)
+		public ActionResult Create(Superhero collection)
 		{
 			try
 			{
@@ -51,7 +52,7 @@ namespace Superhero_Creator2.Controllers
 		// POST: SuperheroesController/Edit/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Edit(int id, IFormCollection collection)
+		public ActionResult Edit(int id, Superhero collection)
 		{
 			try
 			{
@@ -72,7 +73,7 @@ namespace Superhero_Creator2.Controllers
 		// POST: SuperheroesController/Delete/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public ActionResult Delete(int id, IFormCollection collection)
+		public ActionResult Delete(int id, Superhero collection)
 		{
 			try
 			{
