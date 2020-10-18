@@ -235,6 +235,9 @@ namespace Superhero_Creator2.Data.Migrations
                     b.Property<string>("HeroName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("SuperPowerPrimary")
                         .HasColumnType("nvarchar(max)");
 

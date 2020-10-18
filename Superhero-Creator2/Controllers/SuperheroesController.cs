@@ -49,6 +49,7 @@ namespace Superhero_Creator2.Controllers
 			try
 			{
 				_db.Superheroes.Add(superhero);   // Takes captured superhero data, adds to table in our DB
+				
 				_db.SaveChanges();
 				return RedirectToAction(nameof(Index));
 			}

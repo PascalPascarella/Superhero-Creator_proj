@@ -26,5 +26,8 @@ namespace Superhero_Creator2.Models
 
 		[Display(Name = "Catchphrase")]
 		public string Catchphrase { get; set; }
+
+		[Display(Name = "Portrait")]
+		public byte[] Image { get; set; }
 	}
 }
